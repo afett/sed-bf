@@ -39,11 +39,11 @@
 }
 
 # Read source code.
-:read
+#	i \DEBUG read
 # Remove non command characters
 	s/[^][+<>.,-]//g
 # skip empty lines
-/^$/ 	b read
+/^$/ 	b
 # Append the source to the hold space.
 	H
 # Then and replace the pattern space with the result
