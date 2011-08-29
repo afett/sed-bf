@@ -93,12 +93,12 @@
 /@[]]/	{
 # case false:
 	/#00/ {
-# Move the jump marker to the enclosing '['.
-		s/\([[][^[]*\)&/\&\1/
 # If it's the outmost level discard it.
 # The closing ']' will be eaten after
 # the ip has advanced.
-		s/;&[[].*@/;@/
+		s/;&[[].*@/;@/; t bottom
+# Move the jump marker to the enclosing '['.
+		s/\([[][^[]*\)&/\&\1/
 # Continue with next command.
 		b bottom
 	}
